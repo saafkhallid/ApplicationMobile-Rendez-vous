@@ -1,30 +1,93 @@
 import React from 'react';
 import {
+
     StyleSheet,
     View,
     Text,
     Pressable,
+    TextInput, 
+    Button,
+
 } from 'react-native';
 
-export default function ScreenB({ navigation }) {
+export default function ScreenA({ navigation }) {
+
+    const [text1, onChangeText1] = React.useState("Nom");
+
+    const [text2, onChangeText2] = React.useState("Prénom");
+
+    const [text3, onChangeText3] = React.useState("CIN");
+
+    const [text4, onChangeText4] = React.useState("Date de naissence");
+
+
 
     const onPressHandler = () => {
-        // navigation.navigate('Screen_A');
-        navigation.goBack();
+        navigation.navigate('Screen_B');
     }
-
+    
     return (
         <View style={styles.body}>
             <Text style={styles.text}>
-                Screen B
-        </Text>
+            Numéro rdv
+            </Text>
+            <TextInput
+            style={styles.input}
+            onChangeText={onChangeText1}
+            backgroundColor='white'
+            value={text1}
+             />
+              <Text style={styles.text}>
+              HEURE rdv
+          </Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeText2}
+            backgroundColor='white'
+            value={text2}
+             />
+              <Text style={styles.text}>
+              RD honore
+            </Text>
+            <TextInput
+            style={styles.input}
+            onChangeText={onChangeText3}
+            backgroundColor='white'
+            value={text3}
+             />
+
+
+        <Text style={styles.text}>
+         Date de RDV
+            </Text>
+
+            <TextInput
+            style={styles.input}
+            onChangeText4={onChangeText4}
+            value={text4}
+            backgroundColor='white'
+
+             />
+             <View style={styles.divbotton} >
+
+             <Button style={styles.botton}
+            title="Learn More"
+            accessibilityLabel="connecter"
+            />
+
+            <Button style={styles.botton}
+            title="Learn More"
+            accessibilityLabel="Reset"
+            backgroundColor='white'
+
+            />
+             </View>
+
+
             <Pressable
                 onPress={onPressHandler}
                 style={({ pressed }) => ({ backgroundColor: pressed ? '#ddd' : '#0f0' })}
             >
-                <Text style={styles.text}>
-                    Go Back to Screen A
-          </Text>
             </Pressable>
         </View>
     )
@@ -32,13 +95,37 @@ export default function ScreenB({ navigation }) {
 
 const styles = StyleSheet.create({
     body: {
+        marginTop:10,
+        marginLeft:10,
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+       
     },
     text: {
-        fontSize: 40,
+        fontSize: 20,
         fontWeight: 'bold',
         margin: 10,
-    }
+    },
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+      },
+    divbotton:{
+        
+        height:150,
+        marginVertical:15,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center',
+        flexWrap: "wrap",
+        margin: 0,
+        
+    },
+    botton:{
+        marginTop:40,
+        backgroundColor:"red",
+
+    },
+
+
 })

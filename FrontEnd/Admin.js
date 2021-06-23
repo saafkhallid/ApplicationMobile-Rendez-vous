@@ -11,9 +11,13 @@ import {
 } from 'react-native';
 
 export default function ScreenA({ navigation }) {
+
     const [text1, onChangeText1] = React.useState("Nom");
+
     const [text2, onChangeText2] = React.useState("Prénom");
+
     const [text3, onChangeText3] = React.useState("CIN");
+
     const [text4, onChangeText4] = React.useState("Date de naissence");
 
 
@@ -30,6 +34,7 @@ export default function ScreenA({ navigation }) {
             <TextInput
             style={styles.input}
             onChangeText={onChangeText1}
+            backgroundColor='white'
             value={text1}
              />
               <Text style={styles.text}>
@@ -38,6 +43,7 @@ export default function ScreenA({ navigation }) {
           <TextInput
             style={styles.input}
             onChangeText={onChangeText2}
+            backgroundColor='white'
             value={text2}
              />
               <Text style={styles.text}>
@@ -46,6 +52,7 @@ export default function ScreenA({ navigation }) {
             <TextInput
             style={styles.input}
             onChangeText={onChangeText3}
+            backgroundColor='white'
             value={text3}
              />
 
@@ -57,17 +64,21 @@ export default function ScreenA({ navigation }) {
             style={styles.input}
             onChangeText4={onChangeText4}
             value={text4}
+            backgroundColor='white'
+
              />
              <View style={styles.divbotton} >
 
              <Button style={styles.botton}
             title="Learn More"
-            accessibilityLabel="connecter"
+            accessibilityLabel="confirme"
             />
 
             <Button style={styles.botton}
             title="Learn More"
             accessibilityLabel="Reset"
+            backgroundColor='white'
+
             />
              </View>
 
@@ -99,7 +110,9 @@ const styles = StyleSheet.create({
         borderWidth: 1,
       },
     divbotton:{
+        
         height:150,
+        marginVertical:15,
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'center',
@@ -108,10 +121,9 @@ const styles = StyleSheet.create({
         
     },
     botton:{
-        
         marginTop:40,
         backgroundColor:"red",
-        padding: 10,      
+
     },
 
 
